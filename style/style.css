@@ -1,0 +1,19 @@
+body{
+    background-color: pink;
+}
+
+.container{
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+}
+
+#input-field{
+    min-width: 50vw;
+}
+
+img{
+    max-width: 10em;
+    max-height: 10em;
+}
