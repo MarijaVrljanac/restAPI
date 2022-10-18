@@ -1,0 +1,24 @@
+.container {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    
+  }
+  
+  #input-field {
+    min-width: 50vw;
+    padding: 0.5em;
+    border-radius: 5px;
+  }
+  
+  img {
+    max-width: 10em;
+    max-height: 10em;
+  }
+
+  .search-results{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+  }
