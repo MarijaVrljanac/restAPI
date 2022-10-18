@@ -1,44 +1,10 @@
-.App {
-  text-align: center;
+* {
+  padding: 0;
+  margin: 0;
+  flex-wrap: wrap;
+
 }
 
 body {
   background-color: pink;
 }
-
-.container {
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
-  align-items: center;
-}
-
-#input-field {
-  min-width: 50vw;
-  padding: 0.5em;
-  border-radius: 5px;
-}
-
-img {
-  max-width: 10em;
-  max-height: 10em;
-}
-
-.card {
-  display: flex;
-  /* flex-direction: row; */
-  justify-content: center;
-  background-color: white;
-  max-width: 20rem;
-  box-shadow: 3px 3px rgba(211, 211, 211, 0.945);
-
-
-}
-
-.card img {
-  max-width: 3em;
-  max-height: 3em;
-  border-radius: 50%;
-}
-
-
