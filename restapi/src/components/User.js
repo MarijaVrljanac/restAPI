@@ -1,6 +1,7 @@
 import React from "react";
 import "./User.css";
 // import { useState, useEffect } from 'react';
+import { Link } from "react-router-dom";
 
 
 const User = ( { user } ) => {
@@ -16,6 +17,7 @@ const User = ( { user } ) => {
             <p>{ login }</p>
             {/* <Link to={`/user/${ login }`} className="loginbtn">User Detail</Link>  */}
             <a href={ html_url }><button className="user-detail-btn">User Detail</button></a>
+            {/* <Link to={`/user/${ login }`} className="user-detail-btn"><button>User Detail</button></Link> */}
     </div>
     )
 };

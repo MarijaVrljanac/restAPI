@@ -13,7 +13,7 @@ const HomePage = () => {
   const [users, setUsers] = useState([]);
   const [page, setPage] = useState(1);
   //Per page
-  const [limit, setLimit] = useState(10);
+  const [limit, setLimit] = useState(20);
 
   const handleQueryInput = (e) => {
     const value = e.target.value;
@@ -40,7 +40,7 @@ const HomePage = () => {
 
   const fetchUsers = async () => {
     try {
-      const { data } = await axios.get(`https://api.github.com/search/users?q=${query}`);
+      const { data } = await axios.get(`https://api.github.com/search/users?q=${query}`, { params: {page, per_page: limit} });
       console.log(data?.items);
       return data?.items;
     } catch (error) {
@@ -83,10 +83,9 @@ const HomePage = () => {
             <label>
               <small>Users per page: </small>
               <select onChange={ handlePageLimit }>
-                <option value="10">20</option>
-                <option value="15">24</option>
-                <option value="20">28</option>
-                <option value="30">30</option>
+                <option value="20">20</option>
+                <option value="24">24</option>
+                <option value="28">28</option>
               </select>
             </label>
             <div className="pagination">
