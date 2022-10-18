@@ -10,10 +10,10 @@ function App() {
   const [userInput, setUserInput] = useState("");
   const [error, setError] = useState(null);
 
-  const query = "Marija";
+  // const query = "Marija";
 
   useEffect(() => {
-    fetch(`https://api.github.com/search/users?q=${query}`)
+    fetch(`https://api.github.com/search/users?q=${userInput}`)
     .then(res => res.json())
     .then(data => {
       setData(data);
