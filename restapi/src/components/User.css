@@ -1,0 +1,17 @@
+.card {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    column-gap: 10px;
+    background-color: white;
+    min-width: 20rem;
+    box-shadow: 3px 3px rgba(211, 211, 211, 0.945);
+    padding: 10px;
+    margin: 2em;
+  }
+  
+  .card img {
+    max-width: 3em;
+    max-height: 3em;
+    border-radius: 50%;
+  }
