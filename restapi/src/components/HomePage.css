@@ -6,7 +6,10 @@
   }
   
   #input-field {
-    min-width: 50vw;
+    min-width: 20rem;
+    /* width: 50vh; */
+    max-width: 100rem;
+    width: 80%;
     padding: 0.5em;
     border-radius: 5px;
   }
@@ -26,4 +29,25 @@
     padding: 0.5em;
     border: 1px solid black;
     border-radius: 5px;
+  }
+
+  /* Pagination */
+
+  .users-per-page {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: stretch;
+    align-items: center;
+  }
+
+  .users-per-page select,.pagination button {
+    outline: none;
+    padding: 0.5em;
+    border: 5px;
+    border: none;
+  }
+  .users-per-page select{
+    margin-right: 5px;
+    margin-left: 5px;
   }
