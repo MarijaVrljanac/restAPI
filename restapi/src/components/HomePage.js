@@ -21,7 +21,7 @@ const HomePage = () => {
   };
 
   const handlePreviousPage = () => {
-    console.log("Radi")
+    console.log("Previous page");
     setPage (page => {
       if(page == 1) return page;
       else return page - 1;
@@ -29,6 +29,7 @@ const HomePage = () => {
   };
 
   const handleNextPage = () => {
+    console.log("Next page");
     setPage (page => page + 1);
   };
 
@@ -82,9 +83,9 @@ const HomePage = () => {
             <label>
               <small>Users per page: </small>
               <select onChange={ handlePageLimit }>
-                <option value="10">10</option>
-                <option value="15">15</option>
-                <option value="20">20</option>
+                <option value="10">20</option>
+                <option value="15">24</option>
+                <option value="20">28</option>
                 <option value="30">30</option>
               </select>
             </label>
