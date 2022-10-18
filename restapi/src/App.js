@@ -9,8 +9,8 @@ function App() {
     <BrowserRouter>
       <Routes>
         <Route path="/" element={<HomePage/>}/>
-        <Route path="/user" element={<User/>}/>
-        {/* <Route path="/users/:login" element={<Users/>}/> */}
+        {/* <Route path="/user/:login" element={<User/>}/> */}
+        <Route path="/users/:login" element={<Users/>}/>
       </Routes>
     </BrowserRouter>
   );

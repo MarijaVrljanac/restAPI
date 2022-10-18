@@ -4,6 +4,8 @@ import gitLogo from './R.png';
 import axios from "axios";
 import User from "./User";
 import { GrPrevious, GrNext } from "react-icons/gr";
+// import { Octokit } from "octokit";
+// import { token } from "./token";
 
 
 
@@ -14,6 +16,10 @@ const HomePage = () => {
   const [page, setPage] = useState(1);
   //Per page
   const [limit, setLimit] = useState(20);
+
+  // let octokit = new Octokit({
+  //   auth: ""
+  // });
 
   const handleQueryInput = (e) => {
     const value = e.target.value;
@@ -40,7 +46,9 @@ const HomePage = () => {
 
   const fetchUsers = async () => {
     try {
-      const { data } = await axios.get(`https://api.github.com/search/users?q=${query}`, { params: {page, per_page: limit} });
+      const { data } = await axios.get(`https://api.github.com/search/users?q=${query}`, { params: {page, per_page: limit}, headers: {
+        'Authorization': "{token}",
+      } });
       console.log(data?.items);
       return data?.items;
     } catch (error) {
