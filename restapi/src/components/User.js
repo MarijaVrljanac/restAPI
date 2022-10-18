@@ -15,7 +15,7 @@ const User = ( { user } ) => {
             <img src={ avatar_url } alt="avatar"></img>
             <p>{ login }</p>
             {/* <Link to={`/user/${ login }`} className="loginbtn">User Detail</Link>  */}
-            <a href={ html_url }><button>User Detail</button></a>
+            <a href={ html_url }><button className="user-detail-btn">User Detail</button></a>
     </div>
     )
 };

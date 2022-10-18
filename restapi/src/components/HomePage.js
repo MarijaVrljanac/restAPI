@@ -7,6 +7,7 @@ import User from "./User";
 
 const HomePage = () => {
 
+  //Query value picked up from user input
   const [query, setQuery] = useState("");
 
   //Users fetched from the API
@@ -46,7 +47,7 @@ const HomePage = () => {
         </div>
           <input id="input-field" value={ query } type="text" placeholder="Search for GitHub user" onChange={ handleQueryInput }/>
             <br></br>
-          <button onClick={ handleSearchUsers }>Search</button>
+          <button className="search-btn" onClick={ handleSearchUsers }>Search</button>
           <br/>
         
         <div className="search-results">
