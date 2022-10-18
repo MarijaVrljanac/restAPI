@@ -76,7 +76,7 @@ const HomePage = () => {
         </div>
           <input id="input-field" value={ query } type="text" placeholder="Search for GitHub user" onChange={ handleQueryInput }/>
             <br></br>
-          <button className="search-btn" onClick={ handleSearchUsers }>Search</button>
+          <button onClick={ handleSearchUsers }>Search</button>
           <br/>
           <div className="users-per-page">
             <label>
