@@ -3,7 +3,9 @@ import "./HomePage.css"
 import gitLogo from './R.png';
 import axios from "axios";
 import User from "./User";
+// import debounce from 'lodash.debounce';
 import { GrPrevious, GrNext } from "react-icons/gr";
+import { MdSearch } from "react-icons/md";
 // import { Octokit } from "octokit";
 // import { token } from "./token";
 
@@ -81,12 +83,12 @@ const HomePage = () => {
       <div className="container">
         <div className="logo">
           <img src={gitLogo} alt="logo"/>
-          <br/>
+          
         </div>
-          <input id="input-field" value={ query } type="text" placeholder="Search for GitHub user" onChange={ handleQueryInput }/>
-            <br></br>
-          <button className="search-btn" onClick={ handleSearchUsers }>Search</button>
-          <br/>
+          <div className="input">
+            <input id="input-field" value={ query } type="text" placeholder="Search for GitHub user" onChange={ handleQueryInput } />
+            <MdSearch className="search-btn" onClick={ handleSearchUsers }/>
+          </div>
           <div className="users-per-page">
             <label>
               <small>Users per page: </small>
@@ -105,7 +107,7 @@ const HomePage = () => {
           
           { users ? users.map(user => {
             return <User user = { user } key={ user.id }/>
-          }) : (<h2>There is nothing to display...</h2>) }
+          }) : (<h2>There are no users to display...</h2>) }
         </div>
       </div>
     )
