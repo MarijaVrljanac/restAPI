@@ -6,11 +6,16 @@
   
 }
 
-#input-field {
-  min-width: 50vw;
+.input {
+  display: flex;
+  flex-direction: row;
+  justify-content: center;
+  max-width: 118rem;
+  width: 100%;
   min-width: 20rem;
-  /* width: 50vh; */
-  max-width: 100rem;
+}
+
+#input-field {
   width: 80%;
   padding: 0.5em;
   border-radius: 5px;
