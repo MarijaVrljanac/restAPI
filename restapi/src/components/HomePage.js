@@ -4,6 +4,8 @@ import gitLogo from './R.png';
 import axios from "axios";
 import User from "./User";
 import { GrPrevious, GrNext } from "react-icons/gr";
+// import { Octokit } from "octokit";
+// import { token } from "./token";
 
 
 
@@ -13,7 +15,11 @@ const HomePage = () => {
   const [users, setUsers] = useState([]);
   const [page, setPage] = useState(1);
   //Per page
-  const [limit, setLimit] = useState(10);
+  const [limit, setLimit] = useState(20);
+
+  // let octokit = new Octokit({
+  //   auth: ""
+  // });
 
   const handleQueryInput = (e) => {
     const value = e.target.value;
@@ -21,7 +27,7 @@ const HomePage = () => {
   };
 
   const handlePreviousPage = () => {
-    console.log("Radi")
+    console.log("Previous page");
     setPage (page => {
       if(page == 1) return page;
       else return page - 1;
@@ -29,6 +35,7 @@ const HomePage = () => {
   };
 
   const handleNextPage = () => {
+    console.log("Next page");
     setPage (page => page + 1);
   };
 
@@ -39,7 +46,9 @@ const HomePage = () => {
 
   const fetchUsers = async () => {
     try {
-      const { data } = await axios.get(`https://api.github.com/search/users?q=${query}`);
+      const { data } = await axios.get(`https://api.github.com/search/users?q=${query}`, { params: {page, per_page: limit}, headers: {
+        'Authorization': "{token}",
+      } });
       console.log(data?.items);
       return data?.items;
     } catch (error) {
@@ -82,10 +91,9 @@ const HomePage = () => {
             <label>
               <small>Users per page: </small>
               <select onChange={ handlePageLimit }>
-                <option value="10">10</option>
-                <option value="15">15</option>
                 <option value="20">20</option>
-                <option value="30">30</option>
+                <option value="24">24</option>
+                <option value="28">28</option>
               </select>
             </label>
             <div className="pagination">

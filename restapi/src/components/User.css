@@ -1,5 +1,6 @@
 .card {
   display: flex;
+  flex-direction: row;
   justify-content: space-around;
   align-items: center;
   column-gap: 10px;
@@ -16,7 +17,13 @@
   border-radius: 50%;
 }
 
-.user-detail-btn{
+.user-detail-btn {
+  padding: 0.5em;
+  border: 1px solid black;
+  border-radius: 5px;
+}
+
+.back-btn {
   padding: 0.5em;
   border: 1px solid black;
   border-radius: 5px;
