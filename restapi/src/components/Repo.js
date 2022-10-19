@@ -6,7 +6,7 @@ import { Link } from "react-router-dom";
 
 const Repo = ( { repo } ) => {
 
-    const {login, html_url} = repo;
+    const {login, repos_url} = repo;
 
     return(
       <div className="user-repos">
@@ -15,7 +15,7 @@ const Repo = ( { repo } ) => {
                 <a href="#">{ login }</a>
             </h3>
             <p>
-                { html_url }
+                { repos_url }
             </p>
 
         </div>   
