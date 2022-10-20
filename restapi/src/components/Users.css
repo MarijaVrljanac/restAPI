@@ -48,11 +48,6 @@
   color: black;
 }
 
-
-.bio {
-  text-align: center;
-}
-
 /* Pagination */
 
  .repos-per-page {
@@ -66,6 +61,8 @@
   .repos-per-page select,.pagination button {
     outline: none;
     padding: 0.5em;
+    border: 5px;
+    border: none;
   }
   .repos-per-page select{
     margin-right: 5px;
@@ -84,6 +81,4 @@
       justify-content: center;
 
     }
-
-
   }
