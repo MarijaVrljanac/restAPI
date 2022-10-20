@@ -12,6 +12,10 @@
   color: white;
 }
 
+.gitlogo {
+  margin-top: 20px;
+}
+
 .user-card {
   background-color: white;
   max-width: 23rem;
