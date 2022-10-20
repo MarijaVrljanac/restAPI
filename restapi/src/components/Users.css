@@ -48,6 +48,11 @@
   color: black;
 }
 
+
+.bio {
+  text-align: center;
+}
+
 /* Pagination */
 
  .repos-per-page {
@@ -81,4 +86,5 @@
       justify-content: center;
 
     }
+
   }
