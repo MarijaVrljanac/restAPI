@@ -3,7 +3,7 @@
   flex-direction: column;
   justify-content: center;
   align-items: center;
-  
+  gap: 1.2rem;
 }
 
 .input {
@@ -16,7 +16,7 @@
 }
 
 #input-field {
-  width: 80%;
+  width: 38%;
   padding: 0.5em;
   border-radius: 5px;
 }
@@ -24,6 +24,12 @@
 img {
   max-width: 10em;
   max-height: 10em;
+  /* margin-top: 10px;
+  margin-bottom: 7px; */
+}
+
+.logo {
+  margin-top: 20px;
 }
 
 .search-results{
@@ -40,7 +46,7 @@ img {
 
   /* Pagination */
   .users-per-page {
-    margin-top: 10px;
+    margin-top: 1em;
     display: flex;
     flex-direction: row;
     justify-content: stretch;
