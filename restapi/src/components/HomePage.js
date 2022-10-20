@@ -23,9 +23,14 @@ const HomePage = () => {
   //   auth: ""
   // });
 
+  const reloadPage = () => {
+    window.location.reload()
+  }
+
   const handleQueryInput = (e) => {
     const value = e.target.value;
     setQuery(value);
+    handleSearchUsers(e);
   };
 
   const handlePreviousPage = () => {
@@ -82,12 +87,11 @@ const HomePage = () => {
     return (
       <div className="container">
         <div className="logo">
-          <img src={gitLogo} alt="logo"/>
-          
+          <img src={gitLogo} alt="logo" onClick={reloadPage}/>
         </div>
           <div className="input">
             <input id="input-field" value={ query } type="text" placeholder="Search for GitHub user" onChange={ handleQueryInput } />
-            <MdSearch className="search-btn" onClick={ handleSearchUsers }/>
+            {/* <MdSearch className="search-btn" onClick={ handleSearchUsers }/> */}
           </div>
           <div className="users-per-page">
             <label>

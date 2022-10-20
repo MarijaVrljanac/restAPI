@@ -10,7 +10,7 @@
   display: flex;
   flex-direction: row;
   justify-content: center;
-  max-width: 118rem;
+  max-width: 120rem;
   width: 100%;
   min-width: 20rem;
 }
@@ -39,7 +39,6 @@ img {
 }
 
   /* Pagination */
-
   .users-per-page {
     margin-top: 10px;
     display: flex;
