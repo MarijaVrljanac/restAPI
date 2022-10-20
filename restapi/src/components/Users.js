@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-import "./Users.css";
+import "./styles/Users.css";
 // import { useState, useEffect } from 'react';
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 import Repo from "./Repo";
 import { TbArrowBackUp } from "react-icons/tb";
-import gitLogo from './R.png';
+import gitLogo from './assets/R.png';
 import { GrPrevious, GrNext } from "react-icons/gr";
 
 

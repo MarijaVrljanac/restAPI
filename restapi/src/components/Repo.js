@@ -1,5 +1,5 @@
 import React from "react";
-import "./Repo.css";
+import "./styles/Repo.css";
 // import { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 

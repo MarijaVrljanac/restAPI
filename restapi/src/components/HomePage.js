@@ -1,6 +1,6 @@
 import React, { useState, useEffect } from "react";
-import "./HomePage.css"
-import gitLogo from './R.png';
+import "./styles/HomePage.css"
+import gitLogo from './assets/R.png';
 import axios from "axios";
 import User from "./User";
 import debounce from 'lodash.debounce';
