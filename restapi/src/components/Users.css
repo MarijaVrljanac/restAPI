@@ -4,6 +4,7 @@
   justify-content: center;
   align-items: center;
   row-gap: 1em;
+  text-align: center;
 }
 
 .user-card {
@@ -49,7 +50,6 @@
 }
 
 /* Pagination */
-
  .repos-per-page {
     margin-top: 10px;
     display: flex;

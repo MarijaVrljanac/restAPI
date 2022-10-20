@@ -3,9 +3,10 @@ import "./HomePage.css"
 import gitLogo from './R.png';
 import axios from "axios";
 import User from "./User";
-// import debounce from 'lodash.debounce';
+import debounce from 'lodash.debounce';
 import { GrPrevious, GrNext } from "react-icons/gr";
 import { MdSearch } from "react-icons/md";
+import useDebounce from "./useDebounce";
 // import { Octokit } from "octokit";
 // import { token } from "./token";
 
@@ -19,6 +20,8 @@ const HomePage = () => {
   //Per page
   const [limit, setLimit] = useState(20);
 
+  const debouncedQuery = useDebounce(query, 500);
+
   // let octokit = new Octokit({
   //   auth: ""
   // });
@@ -26,6 +29,16 @@ const HomePage = () => {
   const reloadPage = () => {
     window.location.reload()
   }
+
+  const handleNextPage = () => {
+    console.log("Next page");
+    setPage (page => page + 1);
+  };
+
+  const handlePageLimit = (e) => {
+    const value = e.target.value;
+    setLimit(parseInt(value));
+  };
 
   const handleQueryInput = (e) => {
     const value = e.target.value;
@@ -41,19 +54,9 @@ const HomePage = () => {
     })
   };
 
-  const handleNextPage = () => {
-    console.log("Next page");
-    setPage (page => page + 1);
-  };
-
-  const handlePageLimit = (e) => {
-    const value = e.target.value;
-    setLimit(parseInt(value));
-  };
-
   const fetchUsers = async () => {
     try {
-      const { data } = await axios.get(`https://api.github.com/search/users?q=${query}`, { params: {page, per_page: limit}, headers: {
+      const { data } = await axios.get(`https://api.github.com/search/users?q=${debouncedQuery}`, { params: {page, per_page: limit}, headers: {
         'Authorization': "{token}",
       } });
       console.log(data?.items);
@@ -63,6 +66,18 @@ const HomePage = () => {
       return null;
     }
   };
+
+  useEffect(() => {
+    const callUsers = async () => {
+      if(debouncedQuery){
+        const items = await fetchUsers();
+        setUsers(items);
+      }else{
+        setUsers([]);
+      }
+    }
+    callUsers();
+  }, [debouncedQuery]);
 
   useEffect(() => {
     const displayUsersOnChange = async () => {
@@ -76,11 +91,12 @@ const HomePage = () => {
 
   const handleSearchUsers = async (e) => {
     e.preventDefault();
-    if(query) {
+    if(debouncedQuery) {
       const items = await fetchUsers();
       setUsers(items);
     }else{
       console.log("Query is empty...");
+      setUsers([]);
     }
   };
 
@@ -90,7 +106,7 @@ const HomePage = () => {
           <img src={gitLogo} alt="logo" onClick={reloadPage}/>
         </div>
           <div className="input">
-            <input id="input-field" value={ query } type="text" placeholder="Search for GitHub user" onChange={ handleQueryInput } />
+            <input id="input-field" value={ query } type="text" placeholder="Search for GitHub user" onChange={ (e) => setQuery(e.target.value) } />
             {/* <MdSearch className="search-btn" onClick={ handleSearchUsers }/> */}
           </div>
           <div className="users-per-page">
