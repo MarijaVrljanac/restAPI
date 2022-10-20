@@ -12,6 +12,7 @@
   width: 50%;
   box-shadow: 3px 3px rgba(211, 211, 211, 0.945);
   padding: 10px;
+  min-width: 15rem;
   
 }
 
@@ -46,3 +47,38 @@
 .blog-link {
   color: black;
 }
+
+/* Pagination */
+
+ .repos-per-page {
+    margin-top: 10px;
+    display: flex;
+    flex-direction: row;
+    justify-content: stretch;
+    align-items: center;
+  }
+
+  .repos-per-page select,.pagination button {
+    outline: none;
+    padding: 0.5em;
+    border: 5px;
+    border: none;
+  }
+  .repos-per-page select{
+    margin-right: 5px;
+    margin-left: 5px;
+  }
+
+  @media screen and (max-width: 530px){
+    .twitter_username {
+      text-align: center;
+    }
+    img {
+      max-width: 8rem;
+      max-height: 8rem;
+    }
+    .repos-per-page {
+      justify-content: center;
+
+    }
+  }

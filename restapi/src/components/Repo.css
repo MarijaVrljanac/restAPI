@@ -6,7 +6,7 @@
     column-gap: 10px;
     color: white;
     background-color: black;
-    min-width: 20rem;
+    width: max(10%, 20rem);
     box-shadow: 3px 3px rgba(211, 211, 211, 0.945);
     padding: 10px;
     margin: 0em 2em 2em 2em;

@@ -6,6 +6,7 @@ import axios from "axios";
 import Repo from "./Repo";
 import { TbArrowBackUp } from "react-icons/tb";
 import gitLogo from './R.png';
+import { GrPrevious, GrNext } from "react-icons/gr";
 
 
 const Users = () => {
@@ -17,12 +18,34 @@ const Users = () => {
     const [userInfo, setUserInfo] = useState({});
     const [repos, setRepos] = useState([]);
 
+    const [page, setPage] = useState(1);
+    //Per page
+    const [limit, setLimit] = useState(4);
+
+    const handlePreviousPage = () => {
+        console.log("Previous page");
+        setPage (page => {
+          if(page == 1) return page;
+          else return page - 1;
+        })
+      };
+    
+      const handleNextPage = () => {
+        console.log("Next page");
+        setPage (page => page + 1);
+      };
+    
+      const handlePageLimit = (e) => {
+        const value = e.target.value;
+        setLimit(parseInt(value));
+      };
+
     useEffect(() => {
         const fetchUserInformation = async () => {
             try {
                 const response = await Promise.all([
                     axios.get(`https://api.github.com/users/${login}`),
-                    axios.get(`https://api.github.com/users/${login}/repos`),
+                    axios.get(`https://api.github.com/users/${login}/repos`, { params: {page, per_page: limit}}),
                 ]);
                 console.log(response[0].data);
                 setUserInfo(response[0].data);
@@ -37,8 +60,9 @@ const Users = () => {
 
     return(
         <div className="users">
-            <img src={gitLogo}>
-            </img>
+            <Link to="/" className="back">
+                <img src={gitLogo}></img>
+            </Link>
         
             <div className="go-back">
                     <Link to="/" className="back">
@@ -91,7 +115,7 @@ const Users = () => {
                     
                     <div className="followers">
                         <p>
-                        <i>Followers:</i> {userInfo?.following}  <i>Following:</i> {userInfo?.followers}
+                        <i>Following:</i> {userInfo?.following}  <i>Followers:</i> {userInfo?.followers}
                         </p>
                     </div>
                     <div className="more-data">
@@ -108,6 +132,21 @@ const Users = () => {
             <div>
             <h3>Check out <i>{userInfo?.login}'s</i> repos:</h3>
             </div>
+            <div className="repos-per-page">
+            <label>
+              <small>Repos per page: </small>
+              <select onChange={ handlePageLimit }>
+                {/* <option value="1">1</option>
+                <option value="2">2</option> */}
+                <option value="4">4</option>
+                <option value="8">8</option>
+              </select>
+            </label>
+            <div className="pagination">
+              <button onClick={ handlePreviousPage }><GrPrevious/> </button>
+              <button onClick={ handleNextPage }><GrNext/></button>
+            </div>
+          </div>
             <div className="user-repos">
                         
                     {repos ? (
