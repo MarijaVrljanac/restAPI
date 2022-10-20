@@ -82,7 +82,6 @@ const HomePage = () => {
     return (
       <div className="container">
         <div className="logo">
-          <img src={gitLogo} alt="logo"/>
           
         </div>
           <div className="input">

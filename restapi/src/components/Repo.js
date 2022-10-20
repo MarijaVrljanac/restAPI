@@ -1,24 +1,22 @@
 import React from "react";
-import "./User.css";
+import "./Repo.css";
 // import { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 
 
 const Repo = ( { repo } ) => {
 
-    const {login, repos_url} = repo;
+    const { name, html_url, description, language } = repo;
 
     return(
-      <div className="user-repos">
         <div className="repo">
-            <h3>
-                <a href="#">{ login }</a>
+            <h3 className="repo-name">
+                <a href={html_url} >{name}</a>
             </h3>
             <p>
-                { repos_url }
+                {description}
             </p>
-
-        </div>   
+        { language && <small>• {language}</small>}
     </div>
     )
 };
