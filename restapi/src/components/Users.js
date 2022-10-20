@@ -61,7 +61,7 @@ const Users = () => {
     return(
         <div className="users">
             <Link to="/" className="back">
-                <img src={gitLogo}></img>
+                <img src={gitLogo} className="gitlogo"></img>
             </Link>
         
             <div className="go-back">
