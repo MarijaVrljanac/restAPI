@@ -5,10 +5,10 @@
     align-items: center;
     column-gap: 10px;
     color: black;
-    background-color: white;
+    background-color: #ffdbe1;
     width: max(18rem, 23rem);
     /* height: max(6rem, 10rem); */
-    box-shadow: 3px 3px rgba(211, 211, 211, 0.945);
+    box-shadow: 3px 3px #ffb2bf;
     padding: 10px;
     margin: 0em 2em 2em 2em;
     overflow: hidden;
@@ -26,10 +26,3 @@
       color: pink;
   }
 
- .descBtn {
-
- }
-
- .desc {
-    overflow: hidden;
- }

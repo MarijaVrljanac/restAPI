@@ -17,7 +17,7 @@ const Repo = ( { repo } ) => {
                 {/* <p className="desc">
                     {description}
                 </p> */}
-        { language && <small>• {language}</small>}
+        { language && <small className="language">• {language}</small>}
     </div>
     )
 };
