@@ -17,14 +17,12 @@
 
 .user-card {
   background-color: white;
-  max-width: 23rem;
-  width: 50%;
+  width: max(15rem, 21rem);
   box-shadow: 3px 3px rgba(211, 211, 211, 0.945);
-  padding: 10px;
-  min-width: 15rem;
   color: black;
-  
+  padding: 1.5em;
 }
+
 
 .bio {
   max-width: 23rem;
@@ -73,8 +71,9 @@
     /* margin-top: 10px; */
     display: flex;
     flex-direction: row;
-    justify-content: stretch;
+    justify-content: center;
     align-items: center;
+    margin: 1em;
   }
 
   .repos-per-page select,.pagination button {

@@ -127,11 +127,10 @@ const Users = () => {
                         </p>
                     </div>
                 </div>   
-            </div>    
-            <div>
-            <h3>Check out <i>{userInfo?.login}'s</i> repos:</h3>
-            </div>
-            <div className="repos-per-page">
+            </div> 
+            {repos ? (<div>
+                <h3>Check out <i>{userInfo?.login}'s</i> repos:</h3>
+                <div className="repos-per-page">
             <label>
               <small>Repos per page: </small>
               <select onChange={ handlePageLimit }>
@@ -157,6 +156,11 @@ const Users = () => {
                         <h2>{userInfo?.login} doesn't have any public repositories yet.</h2>
                     )}
                 </div>  
+
+            </div>) : (<h2>{userInfo?.login} doesn't have any public repositories yet.</h2>)
+            }   
+            
+            
         </div> 
     );
 };
