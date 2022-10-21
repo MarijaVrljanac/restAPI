@@ -1,11 +1,11 @@
 import React, { useState, useEffect } from "react";
-import "./Users.css";
+import "./styles/Users.css";
 // import { useState, useEffect } from 'react';
 import { Link, useParams } from "react-router-dom";
 import axios from "axios";
 import Repo from "./Repo";
 import { TbArrowBackUp } from "react-icons/tb";
-import gitLogo from './R.png';
+import gitLogo from './assets/R.png';
 import { GrPrevious, GrNext } from "react-icons/gr";
 
 
@@ -40,6 +40,8 @@ const Users = () => {
         setLimit(parseInt(value));
       };
 
+      
+
     useEffect(() => {
         const fetchUserInformation = async () => {
             try {
@@ -61,7 +63,7 @@ const Users = () => {
     return(
         <div className="users">
             <Link to="/" className="back">
-                <img src={gitLogo}></img>
+                <img src={gitLogo} className="gitlogo"></img>
             </Link>
         
             <div className="go-back">
