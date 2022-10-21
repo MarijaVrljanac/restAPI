@@ -7,9 +7,8 @@
   text-align: center;
   color: black;
   background-image: url("../assets/bvkg.png");
-  background-repeat: no-repeat;
+  background-repeat: repeat;
   background-size: contain;
-  /* background-size: s; */
 }
 
 .gitlogo {
@@ -96,4 +95,10 @@
       justify-content: center;
 
     }
+  }
+
+  @media screen and (max-width: 530px){
+   .users {
+    background: fixed;
+   }
   }
