@@ -13,11 +13,12 @@
 }
 
 .user-card {
-  background-color: white;
+  background: rgb(255, 255, 255, 0.55);
   width: max(15rem, 21rem);
   box-shadow: 3px 3px rgba(211, 211, 211, 0.945);
   color: black;
   padding: 1.5em;
+  border-radius: 2em;
 }
 
 
@@ -49,7 +50,7 @@
 .visit-btn, .back-btn {
   padding: 0.5em;
   border: 1px solid black;
-  border-radius: 5px;
+  border-radius: 2em;
 }
 
 .user-repos {
@@ -78,10 +79,15 @@
     padding: 0.5em;
     border: 5px;
     border: none;
+    border-radius: 2em;
   }
   .repos-per-page select{
     margin-right: 5px;
     margin-left: 5px;
+  }
+
+  .repos-per-page .pagination button {
+    margin-left: 3px;
   }
 
   @media screen and (max-width: 530px){

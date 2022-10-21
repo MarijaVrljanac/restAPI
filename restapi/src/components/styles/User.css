@@ -9,6 +9,9 @@
   box-shadow: 3px 3px rgba(211, 211, 211, 0.945);
   padding: 10px;
   margin: 1.5em 2em 2em 2em;
+  border-radius: 2em;
+  background: rgb(255, 255, 255, 0.55);
+
 }
 
 .card img {
@@ -17,14 +20,10 @@
   border-radius: 50%;
 }
 
-.user-detail-btn {
+.user-detail-btn , .back-btn{
   padding: 0.5em;
   border: 1px solid black;
-  border-radius: 5px;
+  border-radius: 2em;
+
 }
 
-.back-btn {
-  padding: 0.5em;
-  border: 1px solid black;
-  border-radius: 5px;
-}
