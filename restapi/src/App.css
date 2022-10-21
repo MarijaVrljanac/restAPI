@@ -10,4 +10,5 @@ body {
   background-image: url("components/assets/bvkg.png");
   background-size: contain;
   background-position: center center;
+  background-attachment: fixed;
 }
