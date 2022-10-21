@@ -6,9 +6,6 @@
   row-gap: 1em;
   text-align: center;
   color: black;
-  background-image: url("../assets/bvkg.png");
-  background-repeat: repeat;
-  background-size: contain;
 }
 
 .gitlogo {
