@@ -9,7 +9,6 @@
   background-image: url("../assets/bvkg.png");
   background-repeat: repeat;
   background-size: contain;
-  /* background-size: s; */
 }
 
 .gitlogo {
@@ -25,6 +24,11 @@
   min-width: 15rem;
   color: black;
   
+}
+
+.bio {
+  max-width: 23rem;
+  overflow: hidden;
 }
 
 .gitlogo {
@@ -98,9 +102,8 @@
     }
   }
 
-  @media screen and (max-width: 450px){
-    .users {
-      background: fixed;
-    }
-    
+  @media screen and (max-width: 530px){
+   .users {
+    background: fixed;
+   }
   }
