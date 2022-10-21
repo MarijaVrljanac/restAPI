@@ -30,6 +30,22 @@ const HomePage = () => {
     window.location.reload()
   }
 
+  const handleNextPage = () => {
+    console.log("Next page");
+    setPage (page => page + 1);
+  };
+
+  const handlePageLimit = (e) => {
+    const value = e.target.value;
+    setLimit(parseInt(value));
+  };
+
+  const handleQueryInput = (e) => {
+    const value = e.target.value;
+    setQuery(value);
+    handleSearchUsers(e);
+  };
+
   const handlePreviousPage = () => {
     console.log("Previous page");
     setPage (page => {
@@ -72,6 +88,17 @@ const HomePage = () => {
     }
     displayUsersOnChange();
   }, [page,limit]);
+
+  const handleSearchUsers = async (e) => {
+    e.preventDefault();
+    if(debouncedQuery) {
+      const items = await fetchUsers();
+      setUsers(items);
+    }else{
+      console.log("Query is empty...");
+      setUsers([]);
+    }
+  };
 
     return (
       <div className="container">
