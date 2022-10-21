@@ -128,7 +128,7 @@ const Users = () => {
                     </div>
                 </div>   
             </div> 
-            {repos ? (<div>
+            {userInfo?.public_repos != 0 ? (<div>
                 <h3>Check out <i>{userInfo?.login}'s</i> repos:</h3>
                 <div className="repos-per-page">
             <label>
