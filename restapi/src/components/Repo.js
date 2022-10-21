@@ -1,6 +1,6 @@
 import React from "react";
-import "./Repo.css";
-// import { useState, useEffect } from 'react';
+import "./styles/Repo.css";
+import { useState, useEffect } from 'react';
 import { Link } from "react-router-dom";
 
 
@@ -13,10 +13,11 @@ const Repo = ( { repo } ) => {
             <h3 className="repo-name">
                 <a href={html_url} >{name}</a>
             </h3>
-            <p>
-                {description}
-            </p>
-        { language && <small>• {language}</small>}
+            {/* <button type="button" className="descBtn" onClick={ toggle }>Read more...</button> */}
+                {/* <p className="desc">
+                    {description}
+                </p> */}
+        { language && <small className="language">• {language}</small>}
     </div>
     )
 };

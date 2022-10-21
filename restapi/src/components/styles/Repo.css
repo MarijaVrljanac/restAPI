@@ -4,22 +4,25 @@
     justify-content: space-around;
     align-items: center;
     column-gap: 10px;
-    color: white;
-    background-color: black;
-    width: max(10%, 20rem);
-    box-shadow: 3px 3px rgba(211, 211, 211, 0.945);
+    color: black;
+    background-color: #ffdbe1;
+    width: max(18rem, 23rem);
+    /* height: max(6rem, 10rem); */
+    box-shadow: 3px 3px #ffb2bf;
     padding: 10px;
     margin: 0em 2em 2em 2em;
+    overflow: hidden;
   }
   
   .repo-name {
-      color: white;
+      color: black;
   }
   
   a:link{
-      color: white;
+      color: black;
   }
   
   a:visited {
-      color: pink;
+      color: #ffb2bf;
   }
+
