@@ -5,11 +5,11 @@
   align-items: center;
   row-gap: 1em;
   text-align: center;
-  background-image: url("../assets/github-for-atom.webp");
+  color: black;
+  background-image: url("../assets/bvkg.png");
   background-repeat: no-repeat;
-  background-size: cover;
-  background-position: center;
-  color: white;
+  background-size: contain;
+  /* background-size: s; */
 }
 
 .gitlogo {
